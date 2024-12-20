@@ -79,7 +79,7 @@ function HeroList() {
             placeholder="Buscar Herói"
           />
           <button onClick={handleSearch} className="btn lupa"><FaSearch/></button>
-          <button onClick={qtdSelect} className="btn">Batalha</button>
+          <button onClick={qtdSelect} className="btn" >Batalha</button>
           <div className="message">Selecione 2 herois e clique em <span>Batalha</span></div>
         </div>
       </header>
@@ -108,7 +108,7 @@ function HeroList() {
               </ul>
 
               </div>
-              <img src={hero.images.sm} alt={hero.name} style={{ height: "100%", borderRadius: "10px" }} />
+              <img src={hero.images.sm} alt={hero.name} style={{ height: "100%", borderRadius: "5px" }} />
             </li>
           ))}
         </ul>
