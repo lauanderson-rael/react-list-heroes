@@ -68,21 +68,30 @@ function HeroList() {
 
   return (
     <div>
-      <div>
-        <input
-          type="text"
-          value={searchHero}
-          onChange={(e) => setSearchHero(e.target.value)}
-          placeholder="Buscar Herói"
-        />
-        <button onClick={handleSearch} className="btn lupa"><FaSearch/></button>
-        <button onClick={qtdSelect} className="btn">Batalha</button>
-        <div className="message">Selecione 2 herois e clique em <span>Batalha</span></div>
-      </div>
+      <header className="header">
+        <h1>Lista de Herois</h1>
+        <div>
+          <input
+            type="text"
+            value={searchHero}
+            onChange={(e) => setSearchHero(e.target.value)}
+            placeholder="Buscar Herói"
+          />
+          <button onClick={handleSearch} className="btn lupa"><FaSearch/></button>
+          <button onClick={qtdSelect} className="btn">Batalha</button>
+          <div className="message">Selecione 2 herois e clique em <span>Batalha</span></div>
+        </div>
+      </header>
+
       {noResults ? (
         <p>Nenhum herói encontrado.</p>
       ) : (
+        
         <ul className="container-list">
+          {heroes < 1 && (
+            <h2 className="loading">Carregando</h2>
+          )}
+
           {filteredHeroes.map(hero => (
             <li
               key={hero.id}
