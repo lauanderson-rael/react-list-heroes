@@ -14,7 +14,8 @@ function HeroList() {
 
 
   useEffect(() => {
-    axios.get("https://homologacao3.azapfy.com.br/api/ps/metahumans")
+    const api = "https://homologacao3.azapfy.com.br/api/ps/metahumans"
+    axios.get(api)
       .then(response => {
         setHeroes(response.data);
         setFilteredHeroes(response.data);
@@ -98,7 +99,15 @@ function HeroList() {
               className={`card ${selectedHeroes.includes(hero) ? 'selected' : ''}`}
               onClick={() => handleSelectHero(hero)}
             >
+              <div>
               <strong>{hero.name}</strong>
+              <ul style={{listStyle: "none", margin: "0", padding: "0", fontWeight: "600"}}>
+                <li>Sex: {hero.appearance.gender}</li>
+                <li>Alt: {hero.appearance.height[1]}</li>
+                <li style={{color: "red"}}>Poder: {hero.powerstats.power}</li>
+              </ul>
+
+              </div>
               <img src={hero.images.sm} alt={hero.name} style={{ height: "100%", borderRadius: "10px" }} />
             </li>
           ))}
