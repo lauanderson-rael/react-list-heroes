@@ -2,7 +2,7 @@
   background-color: #015757;
   display: flex;
   justify-content: space-between;
-  padding: 10px 80px;
+  padding: 20px 80px;
 }
 
 .container-list {
@@ -33,28 +33,26 @@
   }
 
   input{
-    padding: 5px 10px;
+    padding: 8px 12px;
     border-radius: 8px;
   }
 
   .btn{
     background-color: aqua;
-    padding: 5px 10px;
+    padding: 8px 12px;
     margin-left: 10px;
     border-radius: 8px;
-    border: none;
+    border: 1px solid gray;
   }
   .btn:hover{
     opacity: 0.7;
   }
   .lupa{
     background-color: #fff;
-    
-
   }
 
   .card {
-    height: 200px;
+    /* height: 200px; */
     border: 2px solid rgba(255, 255, 255, 0.671);
     border-radius: 4px;
     list-style: none;
